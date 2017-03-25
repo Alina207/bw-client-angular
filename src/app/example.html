@@ -1,0 +1,56 @@
+<div *ngIf="user">
+
+  <h2> You are now logged in as {{ user.username }}!! </h2>
+  <p> Here's the user object </p>
+  <pre> {{ user | json }} </pre>
+
+  <p *ngIf="myData"> Here's some data fetched from a protected API </p>
+  <pre> {{ myData | json }} </pre>
+
+  <button (click)="logout()"> Log Out </button>
+  <button (click)="getPrivateData()"> Get private data </button>
+</div>
+
+<div *ngIf="!user">
+  <form class="login">
+    <h2> Log In </h2>
+
+    <div>
+      <label for="the-email-input"> Email </label>
+      <input type="text" name="email" [(ngModel)]="loginInfo.email" id="the-email-input">
+    </div>
+
+    <div>
+      <label for="the-username-input"> Username </label>
+      <input type="text" name="username" [(ngModel)]="loginInfo.username" id="the-username-input">
+    </div>
+
+    <div>
+      <label for="the-password-input"> Password </label>
+      <input type="password" name="password" [(ngModel)]="loginInfo.password" id="the-password-input">
+    </div>
+
+    <button (click)="login()"> Log In </button>
+  </form>
+
+  <form class="signup">
+    <h2> Sign Up </h2>
+
+    <div>
+      <label for="the-email-signup"> Email </label>
+      <input type="text" name="email" [(ngModel)]="signupInfo.email" id="the-email-signup">
+    </div>
+
+    <div>
+      <label for="the-username-signup"> Username </label>
+      <input type="text" name="username" [(ngModel)]="signupInfo.username" id="the-username-signup">
+    </div>
+
+    <div>
+      <label for="the-password-signup"> Password </label>
+      <input type="password" name="password" [(ngModel)]="signupInfo.password" id="the-password-signup">
+    </div>
+
+    <button (click)="signup()"> Sign Up </button>
+  </form>
+</div>

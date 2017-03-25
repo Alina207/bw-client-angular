@@ -4,11 +4,11 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SessionService {
-
+  BASE_URL = 'http://localhost:3000'
   constructor(private myHttp: Http) { }
 
   signup (user) {
-    const theOriginalPromise = this.myHttp.post('/signup', user).toPromise();
+    const theOriginalPromise = this.myHttp.post(`${this.BASE_URL}/signup`, user).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -18,7 +18,7 @@ export class SessionService {
   }
 
   login (credentials) {
-    const theOriginalPromise = this.myHttp.post('/login', credentials).toPromise();
+    const theOriginalPromise = this.myHttp.post(this.BASE_URL+'/login', credentials).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -28,19 +28,19 @@ export class SessionService {
   }
 
   logout () {
-    return this.myHttp.post('/logout', {})
+    return this.myHttp.post(this.BASE_URL+'/logout', {})
       .toPromise()
       .then(result => result.json());
   }
 
   isLoggedIn () {
-    return this.myHttp.get('/loggedin')
+    return this.myHttp.get(this.BASE_URL+'/loggedin')
       .toPromise()
       .then(result => result.json());
   }
 
   getPrivate () {
-    return this.myHttp.get('/private')
+    return this.myHttp.get(this.BASE_URL+'/private')
       .toPromise()
       .then(result => result.json());
   }

@@ -5,7 +5,8 @@ import { SessionService } from './session.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [SessionService]
 })
 export class AppComponent implements OnInit {
   title = 'app works!';
@@ -16,13 +17,20 @@ export class AppComponent implements OnInit {
   user: any;
   error: string;
   myData: any;
+  isLoginFormOpen:boolean = false;
+  isSignUpFormOpen:boolean = false;
 
   constructor(private mySession: SessionService) {}
 
   ngOnInit() {
+    console.log(this.mySession);
     this.mySession.isLoggedIn()
       .then(userInfo => this.user = userInfo);
   }
+
+ toggleLogin() {
+   this.isLoginFormOpen = !this.isLoginFormOpen
+ }
 
   login() {
     const thePromise = this.mySession.login(this.loginInfo);
@@ -36,6 +44,10 @@ export class AppComponent implements OnInit {
       this.user = null;
       this.error = err;
     });
+  }
+
+  toggleSignUp() {
+    this.isSignUpFormOpen = !this.isSignUpFormOpen
   }
 
   signup() {
