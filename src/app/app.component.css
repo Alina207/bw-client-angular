@@ -1,3 +1,65 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+.headbar {
+  overflow: hidden;
+  position:relative;
+  z-index:9999;
+  margin: 0;
+ background-color:#f35943;
+ filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#f35943, endColorstr=#ec3649);
+ background-image:-moz-linear-gradient(right, #f35943 42%, #ec3649 100%);
+ background-image:-webkit-linear-gradient(right, #f35943 42%, #ec3649 100%);
+ background-image:-ms-linear-gradient(right, #f35943 42%, #ec3649 100%);
+ background-image:linear-gradient(right, #f35943 42%, #ec3649 100%);
+ background-image:-o-linear-gradient(right, #f35943 42%, #ec3649 100%);
+ background-image:-webkit-gradient(linear, right bottom, left bottom, color-stop(42%,#f35943), color-stop(100%,#ec3649));
+}
+
+/*title stuff*/
+.title, .titledesc {
+  color:#FFF;
+  font-style: italic;
+  text-transform: lowercase;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.module {
+  margin:0 auto;
+  width:960px;
+}
+
+.title {
+  font-size:78px;
+  margin:0;
+  text-shadow: 1px 1px 2px #E91E63, 0 0 25px #E91E63, 0 0 5px #E91E63;
+}
+
+.titledesc {
+  font-size:18px;
+  margin:-10px 0 0 30px;
+}
+
+.logo {
+  -webkit-transform:rotate(-10deg);
+  margin-bottom:30px;
+}
+
+.u {
+  float:left;
+  -webkit-box-sizing:border-box;
+  padding:5px;
+}
+
+.u1of3 {
+  width:40%;
+}
+
+
+
+/*LOGIN/SIGNUP FORMS*/
+
 ::selection {
   background-color: #b5e2e7;
 }
@@ -6,17 +68,8 @@
   background-color: #8ac7d8;
 }
 
-body {
-  background: #3CC;
-}
 
-.container {
-  display: -webkit-flex;
-  display: flex;
-  height: 100%;
-}
-
-#logbox {
+.logbox {
   padding: 10px;
   margin: 50px auto;
   width: 340px;
@@ -24,17 +77,14 @@ body {
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  font-family: "Open Sans", Helvetica, sans-serif;
 }
 
-h1 {
+.logbox h1 {
   text-align: center;
   font-size: 175%;
   color: #757575;
   font-weight: 300;
-}
-
-h1, input {
-  font-family: "Open Sans", Helvetica, sans-serif;
 }
 
 .input {

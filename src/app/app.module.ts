@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { AboutComponent } from './about/about.component';
 import { FeedComponent } from './feed/feed.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ArticleService } from './article.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,9 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     AppRoutingModule
   ],
+  providers: [ArticleService],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

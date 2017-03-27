@@ -4,11 +4,11 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SessionService {
-  BASE_URL = 'http://localhost:3000'
+  BASE_URL: string = 'http://localhost:3000'
   constructor(private myHttp: Http) { }
 
   signup (user) {
-    const theOriginalPromise = this.myHttp.post(`${this.BASE_URL}/signup`, user).toPromise();
+    const theOriginalPromise = this.myHttp.post(this.BASE_URL+'/signup', user).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();

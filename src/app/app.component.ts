@@ -9,7 +9,7 @@ import { SessionService } from './session.service';
   providers: [SessionService]
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
+  title = 'Baitwatch';
 
   loginInfo = {};
   signupInfo = {};

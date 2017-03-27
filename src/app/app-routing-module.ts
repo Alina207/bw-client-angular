@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+//Have to import actual components for routing
+
 import { AboutComponent } from './about/about.component';
 import { FeedComponent } from './feed/feed.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -14,10 +17,14 @@ const routes: Routes = [
     path: 'profile/:id',
     component: ProfileComponent,
   },
-  { // http://localhost:4200/feed
-    path: 'feed',
+  { // http://localhost:4200/
+    path: '',
     component: FeedComponent,
   },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
