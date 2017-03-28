@@ -1,20 +1,20 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic);
-
-font-family: 'Open Sans', sans-serif;
-
-html {
-  font-family: 'Open Sans', sans-serif;
+.feed {
+  width: 100%;
+  margin: 10px 0;
+  border: 3px solid green;
 }
 
-.media-object {
+.articleList {
+  width: 50%;
+  border: 3px dotted green;
+
+}
+
+img {
   width: 200px;
-  height: auto;
 }
 
-.oneArticle {
-  width: 80%;
-}
-
-.media-heading {
-  font-size: 100%;
+.postArticle {
+  width: 100%;
+  border: 3px dotted green;
 }

@@ -1,51 +1,36 @@
-<div class="headbar ">
-  <div class="module ">
-    <div class="u u1of3 logo">
-      <h1 class="title">{{title}}</h1>
-      <h4 class="titledesc">The Internet's Best of the Worst Clickbait</h4>
-    </div>
-    <ul class="nav nav-pills">
-      <!-- <li role="presentation"><a routerLink="feed">Home</a></li> -->
-      <li role="presentation"><a routerLink="about">About</a></li>
-      <li role="presentation"><a (click)="toggleLogin()">Login</a></li>
-      <li role="presentation"><a (click)="toggleSignUp()">Sign Up</a></li>
-    </ul>
-  </div>
-</div>
+
+      <h1>{{title}}</h1>
+
+<ul>
+  <li><a routerLink="feed">Home</a></li>
+  <li><a routerLink="about">About</a></li>
+  <!-- <li><button (click)="toggleLogin()">Login</button></li>
+  <li><button (click)="toggleSignUp()">Sign Up</button></li> -->
+</ul>
 
 <p class="error"> {{ error }} </p>
 
-<div *ngIf='!user'>
-<!-- navbar -->
 
   <!-- Login -->
-  <div class="col-md-6" *ngIf="isLoginFormOpen">
-   <div class="logbox">
      <form class="login">
        <h1>account login</h1>
-       <input name="user[email]" [(ngModel)]="loginInfo.username" type="email" placeholder="enter your email" class="input pass"/>
-       <input name="user[password]" [(ngModel)]="loginInfo.password" type="password" placeholder="enter your password" required="required" class="input pass"/>
+       <input name="user[email]" [(ngModel)]="loginInfo.email" type="email" placeholder="enter your email"/>
+       <input name="user[password]" [(ngModel)]="loginInfo.password" type="password" placeholder="enter your password" required="required"/>
        <input (click)="login()" type="submit" value="Sign me in!" class="inputButton"/>
-         <a href="#" id="">create an account</a> - <a href="#" id="">forgot password</a>
+         <a href="#" id="">create an account</a>
      </form>
-   </div>
-  </div>
+
 
     <!-- Signup -->
-  <div class="col-md-6" *ngIf="isSignUpFormOpen">
-    <div class="logbox">
-      <form class="login">
+      <form class="signUp">
         <h1>create an account</h1>
-        <input name="user[name]" [(ngModel)]="signupInfo.username" type="username" placeholder="What's your username?" autofocus="autofocus" required="required" class="input pass"/>
-        <input name="user[password]" [(ngModel)]="signupInfo.password" type="password" placeholder="Choose a password" required="required" class="input pass"/>
+        <input name="user[name]" [(ngModel)]="signupInfo.username" type="username" placeholder="What's your username?" required="required" />
+        <input name="user[password]" [(ngModel)]="signupInfo.password" type="password" placeholder="Choose a password" required="required"/>
         <input name="user[email]" [(ngModel)]="signupInfo.email" type="email" placeholder="Email address" class="input pass"/>
         <input (click)="signup()" type="submit" value="Sign me up!" class="inputButton"/>
             already have an account? <a href="#" id="login_id">login</a>
       </form>
-    </div>
-  </div>
 
-</div>
 
 
 

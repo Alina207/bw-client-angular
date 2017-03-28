@@ -34,13 +34,15 @@ export class AppComponent implements OnInit {
 
   login() {
     const thePromise = this.mySession.login(this.loginInfo);
-
+    console.log(this.loginInfo);
     thePromise.then((userInfo) => {
+      console.log(userInfo);
       this.user = userInfo;
       this.error = null;
     });
 
     thePromise.catch((err) => {
+      console.log(err);
       this.user = null;
       this.error = err;
     });

@@ -18,7 +18,8 @@ export class SessionService {
   }
 
   login (credentials) {
-    const theOriginalPromise = this.myHttp.post(this.BASE_URL+'/login', credentials).toPromise();
+    const options = { withCredentials: true };
+    const theOriginalPromise = this.myHttp.post(this.BASE_URL+'/login', credentials, options).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -34,7 +35,8 @@ export class SessionService {
   }
 
   isLoggedIn () {
-    return this.myHttp.get(this.BASE_URL+'/loggedin')
+    const options = { withCredentials: true };
+    return this.myHttp.get(this.BASE_URL+'/loggedin', options)
       .toPromise()
       .then(result => result.json());
   }

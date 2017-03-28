@@ -20,14 +20,14 @@ export class ArticleService {
       .then(apiResponse => apiResponse.json())
   }
 
-  remove(id) {
-    return this.myHttp.delete(`${this.BASE_URL}/api/articles/${id}`)
-      .toPromise()
-      .then(apiResponse => apiResponse.json())
-  }
 
-  create(that) {
-    return this.myHttp.post(`${this.BASE_URL}/api/articles`, that)
+  create(item) {
+
+    const options = { withCredentials: true };
+
+    console.log('create', item);
+
+    return this.myHttp.post(`${this.BASE_URL}/api/articles`, item, options)
       .toPromise()
       .then(apiResponse => apiResponse.json())
   }
