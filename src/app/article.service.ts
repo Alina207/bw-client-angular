@@ -12,6 +12,7 @@ export class ArticleService {
     return this.myHttp.get(`${this.BASE_URL}/api/articles`)
       .toPromise()
       .then(apiResponse => apiResponse.json())
+      .catch(apiResponse => console.log(apiResponse))
   }
 
   get(id) {

@@ -25,7 +25,8 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() { // gets all articles and lists them
     this.articleService.getList()
-      .then( apiResult => this.articles = apiResult )
+      .then( (apiResult) => {this.articles = apiResult;
+      console.log(apiResult)})
       .catch( err => this.errorMessage = 'There was an error. Try again later')
   }
 
