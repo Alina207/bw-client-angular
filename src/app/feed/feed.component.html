@@ -5,8 +5,12 @@
 
 <div class="feed">
 
+
+<a (click)="addPost()" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+<h2> Post Some <span>ClickBait</span> </h2>
+
 <form class="postArticle">
-  <h2> Post Some Bait </h2>
+
   <div>
     <label for="the-article-title-input"> Article Headline</label>
     <input type="text" name="title" [(ngModel)]="newFeed.title">

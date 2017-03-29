@@ -28,6 +28,7 @@ export class FeedComponent implements OnInit {
       .then( (apiResult) => {this.articles = apiResult;
       console.log(apiResult)})
       .catch( err => this.errorMessage = 'There was an error. Try again later')
+
   }
 
   submitNewFeed() { // adds new articles
@@ -50,6 +51,9 @@ export class FeedComponent implements OnInit {
         })
   }
 
+  addPost() {
+    $('.postArticle').slideToggle();
+  }
 
 }
 

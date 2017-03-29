@@ -1,6 +1,8 @@
 .postArticle {
+  display: none;
   width: 50%;
   padding: 2%;
+  margin: 0 auto;
 }
 .postArticle h2 {
   font-size: 30px;
@@ -20,4 +22,27 @@
 .articleList h3 {
   font-size: 20px;
   font-weight: bold;
+}
+
+h2 {
+  display: inline-block;
+  vertical-align: middle;
+  color: #555;
+  font-weight: 300;
+}
+span {
+  font-weight: 600;
+  color: #f44336;
+  text-transform: uppercase;
+}
+
+.feed a {
+  margin-left: 18%;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+input:focus {
+  box-shadow: 0 1px 0 0 #f44336 !important;
+  border-bottom: #f44336 !important;
 }
