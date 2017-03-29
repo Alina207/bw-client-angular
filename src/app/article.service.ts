@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ArticleService {
-  BASE_URL: string = ''
+  BASE_URL: string = 'http://localhost:3000'
 
   constructor(private myHttp: Http) { }
 
@@ -17,7 +17,8 @@ export class ArticleService {
   get(id) {
     return this.myHttp.get(`${this.BASE_URL}/api/articles/${id}`)
       .toPromise()
-      .then(apiResponse => apiResponse.json())
+      .then(apiResponse => apiResponse.json()
+    ).catch(apiResponse => console.log("This errored ooopsie " + apiResponse))
   }
 
 

@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SessionService {
-  BASE_URL: string = ''
+  BASE_URL: string = 'http://localhost:3000'
   constructor(private myHttp: Http) { }
 
   signup (user) {
@@ -29,6 +29,7 @@ export class SessionService {
   }
 
   logout () {
+    const options = { withCredentials: true };
     return this.myHttp.post(this.BASE_URL+'/logout', {})
       .toPromise()
       .then(result => result.json());
@@ -42,6 +43,7 @@ export class SessionService {
   }
 
   getPrivate () {
+    const options = { withCredentials: true };
     return this.myHttp.get(this.BASE_URL+'/private')
       .toPromise()
       .then(result => result.json());

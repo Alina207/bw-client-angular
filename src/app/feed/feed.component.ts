@@ -40,6 +40,8 @@ export class FeedComponent implements OnInit {
       this.articleService.create(item) //sending the whole object to the server not just the ID
           .then((apiResult) => {
             console.log(apiResult);
+            this.articleService.getList()
+              .then(apiResult => this.articles = apiResult )
           })
           .catch((err) => {
             console.log("Error!", err);

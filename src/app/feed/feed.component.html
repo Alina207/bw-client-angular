@@ -32,7 +32,7 @@
 <img class="previewImg" [src]="item.image"/>
       <h3> {{ item.title }} </h3>
       <p> {{ item.author }} </p>
-      <p> Submitted by <i class="tiny material-icons">perm_identity</i> <span class="username">{{ item.username }}</span>
+      <p> Submitted by <i class="tiny material-icons">perm_identity</i> {{ item.username }}
       on {{ item.date | date:"MM/dd/yy" }} at {{ item.date | date: 'shortTime' }} </p>
       <div class="divider"></div>
       </section>

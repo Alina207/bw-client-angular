@@ -26,15 +26,8 @@ export class LoginComponent implements OnInit {
       .then(userInfo => this.user = userInfo);
   }
 
-  isSidenavOpen: boolean = false;
-
-   toggleIcon(){
-     this.isSidenavOpen = !this.isSidenavOpen;
-   }
-
    login() {
      const thePromise = this.mySession.login(this.loginInfo);
-     console.log(this.loginInfo);
      thePromise.then((userInfo) => {
        console.log(userInfo);
        this.user = userInfo;
@@ -53,12 +46,14 @@ export class LoginComponent implements OnInit {
      const thePromise = this.mySession.signup(this.signupInfo);
 
      thePromise.then((userInfo) => {
+       console.log(userInfo);
        this.user = userInfo;
        this.error = null;
        this.navigator.navigate([''])
      });
 
      thePromise.catch((err) => {
+       console.log(err);
        this.user = null;
        this.error = err;
      });
