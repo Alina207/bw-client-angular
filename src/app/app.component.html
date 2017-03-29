@@ -1,37 +1,26 @@
+<img class="banner" src="../assets/images/banner3.jpg" alt="">
+<div class="navbuttons">
+          <ul>
+            {{user}}
+            <li><button class="waves-effect waves-light btn blue accent-1 z-depth-2" routerLink="feed">Home</button></li>
+            <li><button class="waves-effect waves-light btn blue accent-1 z-depth-2" routerLink="about">About</button></li>
 
-      <h1>{{title}}</h1>
-
-<ul>
-  <li><a routerLink="feed">Home</a></li>
-  <li><a routerLink="about">About</a></li>
-  <!-- <li><button (click)="toggleLogin()">Login</button></li>
-  <li><button (click)="toggleSignUp()">Sign Up</button></li> -->
-</ul>
-
-<p class="error"> {{ error }} </p>
-
-
-  <!-- Login -->
-     <form class="login">
-       <h1>account login</h1>
-       <input name="user[email]" [(ngModel)]="loginInfo.email" type="email" placeholder="enter your email"/>
-       <input name="user[password]" [(ngModel)]="loginInfo.password" type="password" placeholder="enter your password" required="required"/>
-       <input (click)="login()" type="submit" value="Sign me in!" class="inputButton"/>
-         <a href="#" id="">create an account</a>
-     </form>
-
-
-    <!-- Signup -->
-      <form class="signUp">
-        <h1>create an account</h1>
-        <input name="user[name]" [(ngModel)]="signupInfo.username" type="username" placeholder="What's your username?" required="required" />
-        <input name="user[password]" [(ngModel)]="signupInfo.password" type="password" placeholder="Choose a password" required="required"/>
-        <input name="user[email]" [(ngModel)]="signupInfo.email" type="email" placeholder="Email address" class="input pass"/>
-        <input (click)="signup()" type="submit" value="Sign me up!" class="inputButton"/>
-            already have an account? <a href="#" id="login_id">login</a>
-      </form>
+            <li ><a class="waves-effect waves-light btn blue accent-1 z-depth-2" routerLink="login">Login</a></li>
+            <li><button (click)="logout()" class="waves-effect waves-light btn blue accent-1 z-depth-2">Logout</button></li>
+          </ul>
+</div>
 
 
 
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+
+
+<footer class="page-footer indigo darken-4">
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 Copyright
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+        </div>
+    </div>
+</footer>

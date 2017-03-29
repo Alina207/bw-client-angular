@@ -1,0 +1,86 @@
+
+    <div class="container">
+        <div class="row outerRow">
+
+          <!-- LOGIN -->
+            <div class="col l6 m4 authforms">
+              <h2 class="center-align">Login</h2>
+              <div class="row">
+                  <form class="col s12">
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <input [(ngModel)]="loginInfo.email" name="user[email]" id="email" type="email" class="validate" required="required">
+                              <label for="email">Email</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <input [(ngModel)]="loginInfo.password" name="user[password]" id="pass" type="password" class="validate" required="required">
+                              <label for="pass">Password</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col s12">
+                              <p>
+                                  <input type="checkbox" id="rememberLogin">
+                                  <label for="rememberLogin">Remember me</label>
+                              </p>
+                          </div>
+                      </div>
+                      <div class="divider"></div>
+                      <div class="row">
+                          <div class="col m12">
+                              <p class="center-align">
+                                  <button (click)="login()" class="waves-effect waves-light btn blue accent-1 z-depth-2" type="button" name="action">Login</button>
+                              </p>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+            </div>
+
+            <!-- SIGNUP -->
+            <div class="col l6 m4 authforms">
+                <h2 class="center-align">Sign Up</h2>
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <input name="user[name]" [(ngModel)]="signupInfo.username" id="name" type="text" class="validate" required="required"/>
+                              <label for="user">Username</label>
+                          </div>
+                      </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input name="user[email]" [(ngModel)]="signupInfo.email" id="email" type="email" class="validate" required="required"/>
+                                <label for="email">Choose Your Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input name="user[password]" [(ngModel)]="signupInfo.password" id="pass" type="password" class="validate" required="required"/>
+                                <label for="pass">Choose Your Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <p>
+                                    <input type="checkbox" id="rememberSignUp">
+                                    <label for="rememberSignUp">Remember me</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col m12">
+                                <p class="center-align">
+                                    <button (click)="signup()" class="waves-effect waves-light btn blue accent-1 z-depth-2" type="button" name="action">Sign Up</button>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+    </div>
+  </div>

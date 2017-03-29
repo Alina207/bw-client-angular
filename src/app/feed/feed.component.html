@@ -1,34 +1,44 @@
+
+<div class="container">
+
+
+
 <div class="feed">
 
-
 <form class="postArticle">
-  <h2> Add an Article </h2>
+  <h2> Post Some Bait </h2>
   <div>
-    <label for="the-article-title-input"> Add the Title </label>
+    <label for="the-article-title-input"> Article Headline</label>
     <input type="text" name="title" [(ngModel)]="newFeed.title">
   </div>
 
-  <div>
-    <label for="the-article-author-input"> Add the Author</label>
+  <!-- <div>
+    <label for="the-article-author-input"> Spoiler: </label>
     <input type="text" name="author" [(ngModel)]="newFeed.author">
-  </div>
+  </div> -->
 
   <div>
-    <label for="the-article-image-input"> Add the Image</label>
+    <label for="the-article-image-input"> Paste an Image URL</label>
     <input type="text" name="image" [(ngModel)]="newFeed.image" >
   </div>
 
-  <button (click)="submitNewFeed()"> Submit </button>
+  <button (click)="submitNewFeed()" class="btn waves-effect waves-light btn blue accent-1 z-depth-2"> Submit </button>
 </form>
 
 
-<div class="articleList" *ngFor="let item of articles">
-  <img [src]="item.image">
-  <h3> {{ item.title }} </h3>
-  <p> {{ item.author }} </p>
-  <p> {{ item.username }} </p>
-  <p> {{ item.date | date:"yyyyMMMdd" | uppercase }} </p>
-</div>
+    <div class="articleList" *ngFor="let item of articles">
+      <section>
+      <div class="divider"></div>
+<img class="previewImg" [src]="item.image"/>
+      <h3> {{ item.title }} </h3>
+      <p> {{ item.author }} </p>
+      <p> Submitted by <i class="tiny material-icons">perm_identity</i> <span class="username">{{ item.username }}</span>
+      on {{ item.date | date:"MM/dd/yy" }} at {{ item.date | date: 'shortTime' }} </p>
+      <div class="divider"></div>
+      </section>
+    </div>
+
+
 
 
 

@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ArticleService } from '../article.service';
 import { SessionService } from '../session.service';
+import { ArticleService } from '../article.service';
+declare var jQuery:any;
+declare var $:any;
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.css'],
-  providers: [SessionService]
+  providers: [SessionService, ArticleService]
 })
 
 export class FeedComponent implements OnInit {

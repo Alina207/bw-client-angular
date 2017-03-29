@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { FeedComponent } from './feed/feed.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 //import your components here
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   { // http://localhost:4200/
     path: '',
     component: FeedComponent,
+  },// http://localhost:4200/login
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '**',
